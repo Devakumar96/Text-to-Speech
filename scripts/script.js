@@ -1,18 +1,64 @@
+let voicelist = responsiveVoice.getVoice();
 
-function textToAudio () {
-    let msg = document.getElementById('text-to-speech');
+let allVoices;
 
-    let speech = new SpeechSynthesisUtterance();
+for(let i=0; i<voicelist.length; i++){
 
-    speech.lang = "en-US";
+    let voice = '<option value = "'+voicelist[i].name+'"> '+voicelist[i].name+'<option>';
+    
+    allVoices = allVoices + voice;
+}
 
-    speech.text = msg;
+document.getElementById("voice-list").innerHTML = allVoices;
 
-    speech.volume = 1;
+let start = document.getElementById("start");
 
-    speech.rate = 1;
+let pause = document.getElementById("pause");
 
-    speech.pitch = 1;
+let resume = document.getElementById("resume");
 
-    window.speechSynthesis.speak(speech);
+let canc = document.getElementById("canc");
+
+let rate = document.getElementById("rate");
+
+rate.oninput = function() {
+    document.getElementById("rate-value").innerHTML = rate.value;
+}
+start.onclick = function(){
+    let text = document.getElementById("text").value;
+
+    let lang = document.getElementById("voice-list").value;
+
+    let rateValue = document.getElementById("rate").value;
+
+    responsiveVoice.speak(text,lang,{rate:rateValue});
+}
+
+pause.onclick = function(){
+
+    if (responsiveVoice.isPlaying()){
+
+        responsiveVoice.pause();
+
+        pause.style.display = "none";
+
+        resume.style.display = "inline";
+    }
+}
+resume.onclick = function(){
+
+    if(responsiveVoice.isPlaying()){
+
+        responsiveVoice.resume();
+
+        pause.style.display = "inline";
+
+        resume.style.display = "none";
+
+    }
+}
+
+canc.onclick = function (){
+    
+    responsiveVoice.cancel();
 }
