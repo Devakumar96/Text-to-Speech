@@ -1,0 +1,65 @@
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+/* universal css */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height:300px;
+    width: 300px;
+    box-shadow: #d60d0d4d;
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 10px;
+}
+.title{
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    font-size: 23px;
+    color: black;
+    font-weight: 600;
+}
+.enter_text{
+    height: 100px;
+    width: 250px;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-family: 'Poppins', sans-serif;
+    border: none;
+    outline: none;
+    border: 1px solid #514ce1;
+}
+.title::before{
+    content: "Enter Text";
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    top: 75px;
+    color: black;
+    font-size: 15px;
+    margin-left: -40px;
+    font-weight: 500;
+}
+.speak_btn{
+    color: white;
+    background-color: #514ce1;
+    height: 40px;
+    width: 250px;
+    font-family: 'Poppins', sans-serif;
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
