@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text to Speech</title>
+    <title>Text To Speech</title>
+
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 
 <body>
-    <div class="para">
-        <textarea class="form-control textarea" cols="30" rows="10" placeholder="Enter text"></textarea>
-        <button class="btn btn-primary convert">Convert to Speech</button>
-    </div>
-
+    <main>
+        <p class="title">Text To Speech</p>
+        <div class="text-section">
+            <p class="text-title">Enter Text</p>
+            <textarea name="" id="text"></textarea>
+        </div>
+        <div class="voice-section">
+            <p class="voice-title">Select Voice</p>
+            <select name="" id="voice">
+                <option value="Google US English">Google US English</option>
+            </select>
+        </div>
+        <button class="submit">Convert To Speech</button>
+    </main>
     <script src="./scripts/script.js"></script>
 </body>
-
-</html>
